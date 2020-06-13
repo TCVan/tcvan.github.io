@@ -1,0 +1,47 @@
+{% comment %}
+  data = site.data.nav
+  child = true
+{% endcomment %}
+
+{% for menu in include.data %}
+  {% assign target = menu.target %}
+  {% unless target %} 
+    {% assign target = '_self' %} 
+  {% endunless %}
+
+  {% assign active = '' %}
+
+  {% if page.url contains menu.url %}
+    {% assign active = 'active' %}
+  {% endif %}
+
+  {% if menu.child %}
+    {% assign active = active | append: ' dropdown' %}
+  {% endif %}
+  {% if include.child %}
+    <a class="dropdown-item" href="{{ menu.url }}" target="{{ target }}">
+      <i class="{{ menu.icon }}"></i> 
+      <span>{{ menu.text }}</span>
+    </a>
+  {% else %}
+    <li class="nav-item {{ active }}">
+      {% if menu.child %}
+        <a class="nav-link dropdown-toggle" href="{{ menu.url }}" id="nav{{ menu.text | replace: ' ' '' }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="{{ menu.icon }}"></i> 
+          <span>{{ menu.text }}</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="nav{{ menu.text | replace: ' ' '' }}">
+          {% include primary-nav.html data = menu.child child = true %}
+        </div>
+      {% else %}
+        <a class="nav-link" href="{{ menu.url }}" target="{{ target }}">
+          <i class="{{ menu.icon }}"></i> 
+          <span>{{ menu.text }}</span>
+        </a>      
+      {% endif %}
+    </li>    
+  {% endif %}
+
+
+
+{% endfor %}

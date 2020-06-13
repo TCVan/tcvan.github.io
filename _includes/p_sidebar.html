@@ -1,0 +1,22 @@
+{% comment %}
+  include.data=site.data.word 
+  include.posts=site.word 
+  include.path="/word/"
+{% endcomment %}
+<div class="d-block d-sm-none">                
+    <button class="btn btn-success btn-sm btn-block mb-2 collapsed" data-toggle="collapse" data-target="#sidebar">Mục lục</button>
+    <div id="sidebar" class="collapse mb-3">                
+        {% if page.url == include.path %}
+            {% include p_contents.html data=include.data posts=include.posts path=include.path %}
+        {% else %}
+            {% include p_series.html data=include.data posts=include.posts path=include.path %}                
+        {% endif %}
+    </div>
+</div>
+<div class="d-none d-sm-block">
+    {% if page.url == include.path %}
+        {% include p_contents.html data=include.data posts=include.posts path=include.path %}
+    {% else %}
+        {% include p_series.html data=include.data posts=include.posts path=include.path %}                
+    {% endif %}
+</div>

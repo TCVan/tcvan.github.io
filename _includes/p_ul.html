@@ -1,0 +1,14 @@
+{% comment %}
+	include.items = section.word
+	include.path = "/word/" 
+	include.posts = site.word
+{% endcomment %}
+<div class="list-group">
+{% for item in include.items %}
+  {% assign item_url = item.url | prepend: "/" | prepend: include.path | append: "/" | replace: "///", "/" | replace: "//", "/" %}
+  {% assign p = include.posts | where:"url", item_url | first %}
+  {% if p %}
+  	<a href="{{ p.url }}" class="list-group-item {% if item_url == page.url %}active{% endif %} {% if item.posts %}have-child{% endif %}">{% if item.title %} {{ item.title }} {% else %}  {{ p.title }} {% endif %}</a>
+  {% endif %}
+{% endfor %}
+</div>

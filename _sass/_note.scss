@@ -1,0 +1,44 @@
+.note {
+    padding: .5rem;
+    margin: .5rem 0;
+    border: 1px solid $brand-primary;
+    border-color: $brand-primary;
+    border-left-width: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    
+    h5 {
+        margin-top: 0;
+        margin-bottom: .5rem;
+        color: $brand-primary; 
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    code {
+        border-radius: 3px;
+    }
+}
+
+// Tighten up space between multiple callouts
+// .note + .note {
+//     margin-top: -.5rem;
+// }
+
+/* Variations */
+.success {
+    border-color: $brand-success;
+    h5 { color: $brand-success; }
+}
+.info {
+    border-color: $brand-info;
+    h5 { color: $brand-info; }
+}
+.warning {
+    border-color: $brand-warning;
+    h5 { color: $brand-warning; }
+}
+.danger {
+    border-color: $brand-danger;
+    h5 { color: $brand-danger; }
+}

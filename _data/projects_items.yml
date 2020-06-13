@@ -1,0 +1,69 @@
+- title: SortViewer
+  image: sortviewer/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Phầm mềm mô phỏng các thuật toán sắp xếp, chạy trên nền Web, viết bằng HTML, Javascript và CSS.
+  links:
+    - url: /download/sortviewer.7z
+      text: Tải về
+      class: btn btn-primary
+    - url: /live/sortviewer
+      text: Demo
+      class: btn btn-success
+    - url: /projects/sortviewer
+      text: Xem!
+      class: btn btn-secondary
+- title: HC-Mix
+  image: hc-mix/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Add-in của Word được viết bằng C# hỗ trợ nhận dạng và trộn đề trắc nghiệm chuyên nghiệp.
+  links:
+    - url: /download/hc-mix.zip
+      text: Tải về
+      class: btn btn-primary
+    - url: /projects/hc-mix
+      text: Xem ngay!
+      class: btn btn-secondary
+- title: HC-IDE
+  image: hc-ide/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Soạn thảo và chạy thử mã nguồn Online, hỗ trợ nhiều ngôn ngữ như Pascal, C, Java, Python, Ruby, ...
+  links:
+    - url: /ide
+      text: Xem ngay!
+      class: btn btn-secondary
+- title: VietNamKey
+  image: vietnamkey/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Bộ gõ tiếng Việt được viết bằng C#, hỗ trợ Unicode và Telex, đơn giản nhưng rất hiệu quả.
+  links:
+    - url: /download/vietnamkey.zip
+      text: Tải về
+      class: btn btn-primary
+    - url: /projects/vietnamkey
+      text: Xem ngay!
+      class: btn btn-secondary
+- title: HC-Slider
+  image: hc-slider/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Add-in của jQuery dùng để thiết kế side show ảnh trên web, viết bằng HTML, Javascript và CSS.
+  links:
+    - url: /download/hc-slider.7z
+      text: Tải về
+      class: btn btn-primary
+    - url: /live/hc-slider
+      text: Demo
+      class: btn btn-success
+    - url: /projects/hc-slider
+      text: Xem!
+      class: btn btn-secondary
+- title: qType
+  image: qtype/logo.png
+  style: "height: 150px; margin-top: 1rem;"
+  content: Phần mềm hướng dẫn và hỗ trợ học gõ văn bản bằng 10 ngón tay, viết bằng Pascal cơ bản.
+  links:
+    - url: /download/qtype.zip
+      text: Tải về
+      class: btn btn-primary
+    - url: /projects/qtype
+      text: Xem ngay!
+      class: btn btn-secondary

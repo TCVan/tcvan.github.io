@@ -1,0 +1,26 @@
+{% comment %}
+  include.data = site.data.word 
+  include.posts = site.word 
+  include.path = "/word/"
+  include.name = "Pascal"
+{% endcomment %}
+
+{% for section in include.data %}
+  {% if section.title == include.name %}
+    {% for item in section.posts %}
+      {% assign item_url = item | prepend: include.path | append: "/" | replace: "//", "/" %}
+      {% assign p = include.posts | where:"url", item_url | first %}
+      {% unless item_url == page.url %}
+
+<span class="post-category" markdown="1">
+  <span class="label">
+    {{ p.title }}
+  </span>
+</span>
+{{ p.content }}
+
+      {% endunless %}
+    {% endfor %}
+    {% break %}
+   {% endif %}
+{% endfor %}

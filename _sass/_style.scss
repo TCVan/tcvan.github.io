@@ -1,0 +1,287 @@
+
+$nav-trans: 0.7;
+$nav-height: 50px;
+$footer-height: 80px;
+$footer-margin-top: 10px;
+$footer-padding-top: 10px;
+html, body {
+    font-family: "Palatino Linotype", "Times New Roman", sans-serif;
+    font-size: 14px;
+    height: 100%;
+    @include tablet {
+        font-size: 16px;
+    }
+    @include desktop {
+        font-size: 18px;
+    }
+    p{
+        margin-bottom: 0px;
+    }
+}
+
+.h1, h1 { font-size: 1.8em; }
+.h2, h2 { font-size: 1.4em; }
+.h3, h3 { font-size: 1.2em; }
+.h4, h4 { font-size: 1.1rem; }
+.h5, h5 { font-size: 1rem; font-style: italic; }
+.h6, h6 { font-size: 0.85rem; font-style: italic; }
+ 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: $brand-primary;
+}
+
+.drop-2{
+    color: darken($brand-success, 10%);
+    float: left;
+    font-size: 3rem;
+    line-height: 2rem;
+    padding-top: .6rem;
+    padding-right: 5px;
+}
+
+dl, ol, ul {
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+}
+
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: (0 - $footer-margin-top - $footer-height);
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.page-wrap:after {
+    /* .push must be the same height as footer */
+    height: $footer-height; 
+}
+
+.fill-height{
+    height: calc(100vh - #{$footer-height + $footer-margin-top + $nav-height});
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    height: $footer-height;
+    margin-top: $footer-margin-top;
+}
+//Selection
+
+::selection{ /* Safari and Opera */ 
+    background: #00A000;
+    color: #FFF;     
+}
+
+::-moz-selection{ /* Firefox */ 
+    background: #00A000; 
+    color: #FFF;    
+}
+
+// Cho navbar
+body {
+    .navbar { // khi đã cuộn lên trên cùng
+        height: $nav-height;
+        z-index: 1000;
+        -webkit-transition: background-color .4s cubic-bezier(0.4, 0, 1, 1);
+        transition: background-color .4s cubic-bezier(0.4, 0, 1, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    #mainNav{
+        background-color: $brand-inverse !important;
+        margin-top: 10px;
+        @include tablet {
+            background-color: rgba(0,0,0,0) !important;
+        }
+        @include desktop {
+            background-color: rgba(0,0,0,0) !important;
+        }
+    }
+
+    .navbar.fixed-top { // khi cuộn lên và đang giữa trang, bán trong suốt
+        top: -$nav-height; 
+        transform: translate3d(0px, $nav-height, 0px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transition: -webkit-transform .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        transition: -webkit-transform .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        transition: transform .3s cubic-bezier(0.22, 0.61, 0.36, 1);
+        #mainNav{
+            background-color: rgba($brand-inverse, 0.8) !important;
+            @include tablet {
+                background-color: rgba(0,0,0,0) !important;
+            }
+            @include desktop {
+                background-color: rgba(0,0,0,0) !important;
+            }
+        }
+    }
+}
+
+@include bg-variant('.bg-nav', rgba($brand-inverse, 0.8));
+
+.list-group {
+    .list-group-item.have-child{
+        &:before {
+        content: "\f054";
+        position: absolute;
+        top: 15px;
+        right: 8px;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+    }
+}
+
+/*
+ * This code is courtesy Ben Balter, modified by Parker Moore for jekyllrb.com
+ * http://ben.balter.com/2014/03/13/pages-anchor-links/
+ */
+.header-link {
+    position: relative;
+    left: 0.5em;
+    opacity: 0;
+    font-size: 0.8em;
+    @include transition(opacity 0.2s ease-in-out 0.1s);
+}
+
+h2:hover .header-link, h3:hover .header-link, h4:hover .header-link, h5:hover .header-link, h6:hover .header-link {
+    opacity: 1;
+}
+
+.gitedit {
+    margin-top: 0.5rem;
+}
+.breadcrumb {
+    text-align: left;
+}
+.cl-hl {
+    color: #f90000;
+}
+
+ol.list-group {
+    & > a {
+        & > li {
+            margin-left: 25px;
+        }
+    }
+}
+pre{
+    font-size: inherit;
+    code{
+        font-size: 0.8em;
+        font-family: Consolas, 'Inconsolata', monospace;
+    }
+}
+code {
+    color: inherit;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 0.8em;
+    font-family: Consolas, 'Inconsolata', monospace;
+}
+ul, ol {
+    color: inherit;
+}
+
+blockquote {
+    border-left: 4px solid #4CAF50;
+    padding: 10px 20px;
+    margin: 10px 0px;
+}
+
+// @for $i from 1 through 9 {
+//   .s-#{$i} { @include transform(scale($i / 10)); }
+// 
+#main-content {
+    & > div {
+        position: relative;
+
+        .img-r {
+            // float: right !important;
+            position: absolute;
+            top: 10px;
+            right: 0px;
+        }
+
+        & > p, & > div { & > img {
+            float: none !important;
+            display: block !important;
+            margin-right: auto !important;
+            margin-left: auto !important;
+        }}
+    }
+    
+    .img-m {
+        float: none !important;
+        display: block !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    $kbd-color: #4DA016;//#1abc9c;
+    kbd
+    {
+        color: #fff;
+        margin: 0 .1rem;
+        padding: .1rem .6rem;
+        font-size: .75rem;
+        font-family: inherit;
+
+        @include box-shadow(inset 0px 1px 1px 0px lighten($kbd-color, 30%));
+        @include linearGradient($kbd-color, darken($kbd-color, 10%));
+        @include border-radius(3px);
+        border:1px solid darken($kbd-color, 30%);
+        display:inline-block;
+        cursor:pointer;
+        text-decoration:none;
+        // text-shadow:0px 1px 0px lighten($kbd-color, 10%);
+
+        &:hover {
+            @include linearGradient(darken($kbd-color, 10%), $kbd-color);
+        }
+        &:active {
+            @include linearGradient(darken($kbd-color, 15%), darken($kbd-color, 5%));
+        }
+
+    }
+}
+// cái này cho mấy cái page tổng hợp
+.post-category {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 6px 10px 8px;
+    color: #fff;
+    background-color: #9e2812;
+    @include linearGradient(#9e2812, #6f0d0d);
+    @include border-radius(0 5px 5px 0);
+    @include box-shadow(0 1px 5px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255,255,255,.2), inset 0 -1px 0 rgba(0,0,0,.3));
+    
+    h5, .label {
+        float: left;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+        font-size: 1rem; 
+        font-style: italic;
+    }
+}
+// Cái này cho trang làm bài kiểm tra của HS
+#iframeContainer{
+    #iframe{
+        border: none;
+        max-width:100%;
+        max-height:100vh;
+        height: calc(100vh - #{$footer-height + $nav-height});
+    }
+}

@@ -1,0 +1,68 @@
+- title: Giới thiệu
+  url: 
+
+- title: SublimeText
+  url: sublimetext
+  posts:
+  - url: 
+  - url: installation
+  - url: shortcut
+
+- title: Pascal
+  url: pascal
+  posts:
+  - url: 
+  - url: first_program
+  - url: basic_syntax
+  - url: data_types
+  - url: variable_init
+  - url: io
+  - url: conditions
+    posts:
+    - url: 
+    - url: if
+    - url: case
+  - url: loops
+    posts:
+    - url: 
+    - url: for
+    - url: while
+    - url: repeat
+  - url: data_structures
+    posts:
+    - url: 
+    - url: arrays
+    - url: strings
+    - url: records
+    - url: sets
+    - url: files
+    - url: pointers
+  - url: subprogram
+    posts:
+    - url: 
+    - url: procedures
+    - url: functions
+    - url: variable_scope
+  - url: unit
+  - url: quick_guide
+
+- title: C / C++
+  url: c
+  posts:
+  - url: 
+  - url: installation
+  - url: sample
+
+- title: C#
+  url: csharp
+  posts:
+  - url: 
+  - url: installation
+  - url: sample
+
+- title: Javascript
+  url: javascript
+  posts:
+  - url: 
+  - url: installation
+  - url: sample

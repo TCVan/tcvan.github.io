@@ -1,4 +1,10 @@
 _site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+*.swp
+pkg/
+test/
+.idea/
+.sass-cache
+test.md
+test2.md
+GemFile.lock
+.jekyll-cache

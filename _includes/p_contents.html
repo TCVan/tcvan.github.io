@@ -1,0 +1,7 @@
+{% comment %}
+  include.data=site.data.word 
+  include.posts=site.word 
+  include.path="/word/"
+{% endcomment %}
+<h3>Trong series này:</h3>
+{% include p_ul.html items=include.data posts=include.posts path=include.path %}
