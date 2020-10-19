@@ -5,7 +5,7 @@
   <a class="navbar-brand" href="/">{{ site.name }}</a>
   <div class="collapse navbar-collapse" id="mainNav">
     <ul class="navbar-nav mr-auto">
-      {% include primary-nav.html data = site.data.nav%}
+      {%- comment -%} {% include primary-nav.html data = site.data.nav%} {%- endcomment -%}
     </ul>
     <a href="{{ site.repository }}" class="nav-link text-warning"><span class="fa fa-github"></span> Github</a>
   </div>
