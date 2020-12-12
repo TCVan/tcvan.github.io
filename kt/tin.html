@@ -7,7 +7,7 @@ script: |
       var iframeContainer = $("#iframeContainer");
       var container = $("#container");
       var iframe = $("#iframe");
-      $("#linksContainer a").click(function (e) {
+      $("#linksContainer a.msform").click(function (e) {
         e.preventDefault();
         container.addClass("d-none");
         iframeContainer.removeClass("d-none");
@@ -36,12 +36,19 @@ script: |
 
 <div class="container" id="container">
   <h2 class="text-center">Links kiểm tra hệ số 1 các lớp của thầy Hoàn Chân</h2>
-  <p class="text-center py-2">Các em xem mã số học sinh của mình trên thẻ HS hoặc ở đây nhé:</p>
-  <p class="text-center pb-2"> <a class="btn btn-danger" href="https://drive.google.com/file/d/19pAdYylCUXnQkhtwvbKG3XYG1b6hGx-i/view">Danh sách HS các lớp</a></p>
-  <p class="text-center py-2">Các em xem bảng điểm chi tiết từng cột ở đây nhé:</p>
-  <p class="text-center pb-2"> <a class="btn btn-success" href="https://c3tcvan-my.sharepoint.com/:x:/g/personal/lhchan_tcvan_edu_vn/EW4bHiYmFCJBpR0dBjlln4oBaa2hMPal199emfTF6jiuOA?e=PxEWMI">Bảng điểm chi tiết</a></p>
-  <p class="text-center py-2">Đáp án và giải thích đề kiểm tra giữa kỳ môn tin học 11:</p>
-  <p class="text-center pb-2"> <a class="btn btn-primary" href="https://c3tcvan-my.sharepoint.com/:w:/g/personal/lhchan_tcvan_edu_vn/EcrPDa1J6-tFmVE5W2nFbOwBwPTPhCxR4YIVMYQxvFY8CA?e=y10lmL">Đáp án và giải thích KT GKI</a></p>
+  <div class="row">
+    <div class="col-lg-4 py-1 px-3">
+      <a class="btn btn-block btn-danger" href="https://drive.google.com/file/d/19pAdYylCUXnQkhtwvbKG3XYG1b6hGx-i/view">Danh sách MSHS các lớp</a>
+    </div>
+    <div class="col-lg-4 py-1 px-3">
+      <a class="btn btn-block btn-success" href="https://c3tcvan-my.sharepoint.com/:x:/g/personal/lhchan_tcvan_edu_vn/EW4bHiYmFCJBpR0dBjlln4oBaa2hMPal199emfTF6jiuOA?e=PxEWMI">Bảng
+        điểm chi tiết</a>
+    </div>
+    <div class="col-lg-4 py-1 px-3">
+      <a class="btn btn-block btn-primary" href="https://c3tcvan-my.sharepoint.com/:w:/g/personal/lhchan_tcvan_edu_vn/EcrPDa1J6-tFmVE5W2nFbOwBwPTPhCxR4YIVMYQxvFY8CA?e=y10lmL">Đáp
+        án và giải thích KT GKI Tin 11</a>
+    </div>
+  </div>
   <div class="row" id="linksContainer">
     <div class="col-lg-6">
       <div class="card text-dark bg-light">
@@ -49,53 +56,75 @@ script: |
           <h4 class="text-white mb-0">Khối 12</h4>
         </div>
         <div class="card-body ">
-          <h5 class="card-title">Học kỳ I</h5>
-          <div class="list-group">
-            <!--Starting list group here -->
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURDlRTjA1RFoyRUE0OEI4QUxaWTRUTFFOWi4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">
-              Kiểm tra lần 1 - Bài 1 + 2
-              <span class="badge badge-primary badge-pill">Tháng 09</span>
-            </a>
-            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">
-              Kiểm tra lần 2 - Table
-              <span class="badge badge-danger badge-pill">Tháng 10</span>
-            </a>
-            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">
-              Kiểm tra lần 3 - Form
-              <span class="badge badge-success badge-pill">Tháng 11</span>
-            </a>
-            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-info">
-              Kiểm tra lần 4 - Report
-              <span class="badge badge-info badge-pill">Tháng 12</span>
-            </a>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Học kỳ I</h5>
+              <p class="card-text">Có 3 cột điểm kiểm tra thường xuyên, 1 cột kiểm tra giữa kỳ và 1 cột kiểm tra cuối kỳ.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% include item_kt.html  
+                style = "primary" 
+                name = "Kiểm tra lần 1 - Bài 1 + 2" 
+                badge = "Tháng 09"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURDlRTjA1RFoyRUE0OEI4QUxaWTRUTFFOWi4u"
+              %}
+              {% include item_kt.html  
+                style = "danger" 
+                name = "Kiểm tra lần 2 - Table" 
+                badge = "Tháng 10"
+                link = ""
+              %}
+              {% include item_kt.html  
+                style = "success" 
+                name = "Kiểm tra lần 3 - Form" 
+                badge = "Tháng 11"
+                link = ""
+              %}
+              {% include item_kt.html  
+                style = "info" 
+                name = "Kiểm tra lần 4 - Query" 
+                badge = "Tháng 12"
+                link = ""
+              %}
+            </ul>
           </div>
-          <!--Ends List -->
-          <h5 class="card-title pt-4">Học kỳ II</h5>
-          <div class="list-group">
-            <!--Starting list group here -->
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUNDFTNlhCUkw4QVpYMzhQU01QMk1ESFRVRC4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">
-              Kiểm tra lần 5 - CSDLQH Lý thuyết
-              <span class="badge badge-danger badge-pill">Tháng 11</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUN1RPRTJSMEE4WkowREhMNURTMDdBNUJISi4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">
-              Kiểm tra lần 6 - CSDLQH Thực hành
-              <span class="badge badge-primary badge-pill">Tháng 02</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUOEY3UlJZNVZSWTlJMVNOSjQ1V01BRUVUTC4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">
-              Kiểm tra lần 7 - Bảo mật thông tin
-              <span class="badge badge-success badge-pill">Tháng 03</span>
-            </a>
+          <hr>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Học kỳ II</h5>
+              <p class="card-text">Có 2 cột điểm kiểm tra thường xuyên, 1 cột kiểm tra giữa kỳ và 1 cột kiểm tra cuối kỳ.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% include item_kt.html  
+                style = "primary" 
+                name = "Kiểm tra lần 5 - CSDLQH Lý thuyết" 
+                badge = "Tháng 01"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUNDFTNlhCUkw4QVpYMzhQU01QMk1ESFRVRC4u"
+              %}
+              {% include item_kt.html  
+                style = "danger" 
+                name = "Kiểm tra lần 6 - CSDLQH Thực hành" 
+                badge = "Tháng 02"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUN1RPRTJSMEE4WkowREhMNURTMDdBNUJISi4u"
+              %}
+              {% include item_kt.html  
+                style = "success" 
+                name = "Kiểm tra lần 7 - Bảo mật thông tin" 
+                badge = "Tháng 03"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUOEY3UlJZNVZSWTlJMVNOSjQ1V01BRUVUTC4u"
+              %}
+              {% include item_kt.html  
+                style = "white" 
+                name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra cuối kỳ." 
+                ans = "files/12/de cuong CKII.pdf"
+                ansName = "Đề cương trắc nghiệm"
+                score = "files/12/on tap CKII.pdf"
+                scoreName = "Đề cương lý thuyết"
+              %}
+            </ul>
           </div>
-          <!--Ends List -->
         </div>
-        <!-- <div class="card-footer bg-secondary border-danger text-right">
-            <a href="#" class="btn btn-info btn-sm">Tutorials</a> <a href="#" class="btn btn-success btn-sm">Demos</a>
-          </div> -->
-      </div> <!-- End CCard -->
+      </div>
     </div>
     <div class="col-lg-6">
 
@@ -104,55 +133,85 @@ script: |
           <h4 class="text-white mb-0">Khối 11</h4>
         </div>
         <div class="card-body ">
-          <h5 class="card-title">Học kỳ I</h5>
-          <div class="list-group">
-            <!--Starting list group here -->
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURUdGV09WV09PQVUzUkw1REdMQUZSRjVTUi4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">
-              Kiểm tra lần 1 - Khái niệm + Biểu thức
-              <span class="badge badge-primary badge-pill">Tháng 10</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMDNBTjdFWDMzWjJXTDJLNEhZMlA5TzdOOC4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">
-              Kiểm tra lần 2 - IF
-              <span class="badge badge-danger badge-pill">Tháng 11</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUQ0JWVjJESzFDVzhCVFZCWEMwQlA4V1MzMy4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">
-              Kiểm tra lần 3 - FOR + WHILE
-              <span class="badge badge-success badge-pill">Tháng 12</span>
-            </a>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Học kỳ I</h5>
+              <p class="card-text">Có 2 cột điểm kiểm tra thường xuyên, 1 cột kiểm tra giữa kỳ và 1 cột kiểm tra cuối kỳ.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% include item_kt.html  
+                style = "primary" 
+                name = "Kiểm tra lần 1 - Khái niệm + Biểu thức" 
+                badge = "Tháng 10"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURUdGV09WV09PQVUzUkw1REdMQUZSRjVTUi4u"
+                ans = "files/11/OL1.png"
+              %}
+              {% include item_kt.html  
+                style = "danger" 
+                name = "Kiểm tra lần 2 - IF" 
+                badge = "Tháng 11"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMDNBTjdFWDMzWjJXTDJLNEhZMlA5TzdOOC4u"
+                ans = "files/11/OL2.png"
+              %}
+              {% include item_kt.html  
+                style = "success" 
+                name = "Kiểm tra lần 3 - FOR + WHILE" 
+                badge = "Tháng 12"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUQ0JWVjJESzFDVzhCVFZCWEMwQlA4V1MzMy4u"
+                ans = "files/11/OL3.png"
+              %}
+              {% include item_kt.html  
+                style = "white" 
+                name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra cuối kỳ." 
+                ans = "files/11/de cuong CKI.pdf"
+                ansName = "Đề cương trắc nghiệm"
+                score = "files/11/on tap CKI.pdf"
+                scoreName = "Đề cương lý thuyết"
+              %}
+            </ul>
           </div>
-          <!--Ends List -->
-          <h5 class="card-title pt-4">Học kỳ II</h5>
-          <div class="list-group">
-            <!--Starting list group here -->
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMjA5QjBNUzE3SUtaR0VBQVZPRU9TTTNWTC4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">
-              Kiểm tra lần 4 - ARRAY
-              <span class="badge badge-primary badge-pill">Tháng 01</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUOTFERU5GVUkxVzFMQ0ZKVlFYRDlNSTEwQy4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">
-              Kiểm tra lần 5 - STRING
-              <span class="badge badge-danger badge-pill">Tháng 02</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURTI0NkNFTlNCRzgyUjExUzczTUdNR0VPMy4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">
-              Kiểm tra lần 6 - FILE
-              <span class="badge badge-success badge-pill">Tháng 03</span>
-            </a>
-            <a href="DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMTgyRksyQjBUSDk5MlJWUUpYMTNWOTJDTi4u"
-              class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-info">
-              Kiểm tra 15 phút lần 7 - FUNCTION
-              <span class="badge badge-info badge-pill">Tháng 04</span>
-            </a>
+          <hr>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Học kỳ II</h5>
+              <p class="card-text">Có 3 cột điểm kiểm tra thường xuyên, 1 cột kiểm tra giữa kỳ và 1 cột kiểm tra cuối kỳ.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% include item_kt.html  
+                style = "primary" 
+                name = "Kiểm tra lần 4 - ARRAY" 
+                badge = "Tháng 01"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMjA5QjBNUzE3SUtaR0VBQVZPRU9TTTNWTC4u"
+              %}
+              {% include item_kt.html  
+                style = "danger" 
+                name = "Kiểm tra lần 5 - STRING" 
+                badge = "Tháng 02"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUOTFERU5GVUkxVzFMQ0ZKVlFYRDlNSTEwQy4u"
+              %}
+              {% include item_kt.html  
+                style = "success" 
+                name = "Kiểm tra lần 6 - FILE" 
+                badge = "Tháng 03"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphURTI0NkNFTlNCRzgyUjExUzczTUdNR0VPMy4u"
+              %}
+              {% include item_kt.html  
+                style = "info" 
+                name = "Kiểm tra lần 7 - FUNCTION" 
+                badge = "Tháng 04"
+                link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMTgyRksyQjBUSDk5MlJWUUpYMTNWOTJDTi4u"
+              %}
+            </ul>
+            {% include item_kt.html  
+                style = "white" 
+                name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra cuối kỳ." 
+                ans = "files/11/de cuong CKII.pdf"
+                ansName = "Đề cương trắc nghiệm"
+                score = "files/11/on tap CKII.pdf"
+                scoreName = "Đề cương lý thuyết"
+              %}
           </div>
-          <!--Ends List -->
-        </div>
-        <!-- <div class="card-footer bg-secondary border-danger text-right">
-            <a href="#" class="btn btn-info btn-sm">Tutorials</a> <a href="#" class="btn btn-success btn-sm">Demos</a>
-          </div> -->
+        </div>        
       </div> <!-- End CCard -->
     </div>
   </div>

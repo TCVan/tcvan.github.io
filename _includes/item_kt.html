@@ -1,0 +1,30 @@
+{% comment %}
+    include.style = "danger"
+    include.name = "Kiểm tra lần 1"
+    include.badge = "Tháng 11"
+    include.link = "xxxxxxxxxxxxxxxxxxxxxxxx"
+    include.ans = 
+    include.score = 
+    include.linkName = 
+    include.ansName = 
+    include.scoreName = 
+{% endcomment %}
+
+<li class="list-group-item list-group-item-{{ include.style }}">
+    <p class="btn d-flex justify-content-between align-items-center">
+        {{ include.name }}
+        <span class="badge badge-{{ include.style }} badge-pill">{{ include.badge }}</span>
+    </p>
+    <hr>
+    <p class="d-flex justify-content-between align-items-center">
+        {% if include.link != null and include.link != '' %}
+            <a href="{{ include.link }}" class="msform btn btn-sm btn-info">{% if include.linkName != null and include.linkName != ''  %}{{ include.linkName }}{% else %}Bắt đầu làm bài{% endif %}</a>
+        {% endif %}
+        {% if include.ans != null and include.ans != ''  %}
+            <a href="{{ include.ans }}" class="btn btn-sm btn-warning">{% if include.ansName != null and include.ansName != ''  %}{{ include.ansName }}{% else %}Đáp án chi tiết{% endif %}</a>
+        {% endif %}
+        {% if include.score != null and include.score != ''  %}
+            <a href="{{ include.score }}" class="btn btn-sm btn-dark">{% if include.scoreName != null and include.scoreName != ''  %}{{ include.scoreName }}{% else %}Bảng điểm{% endif %}</a>
+        {% endif %}
+    </p>
+</li>
