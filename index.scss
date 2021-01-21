@@ -1401,6 +1401,12 @@ ul.navi-list[data-level="1"] li:hover{
             >a{
                 
             }
+            a:hover {
+                color: #fff;
+                border-bottom: 1px solid #186bcc;
+                background: $brand-info;
+                border-radius: 0;
+            }
         }
         >li.active{
             >a{
