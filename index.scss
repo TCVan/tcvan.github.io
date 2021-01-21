@@ -1429,3 +1429,23 @@ ul.navi-list[data-level="1"] li:hover{
 .list-table-event-schedule{
     height: 600px !important;
 }
+.post-title {
+    >.entry-title{
+        font-size: 14px !important;
+    }
+}
+@media(min-width:1200px){
+  .container{
+  	width:1230px;
+  }
+}
+@media(min-width:1400px){
+  .container{
+  	width:1430px;
+  }
+}
+@media(min-width:1600px){
+  .container{
+  	width:1630px;
+  }
+}
