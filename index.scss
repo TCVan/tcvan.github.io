@@ -1397,7 +1397,11 @@ ul.navi-list[data-level="1"] li:hover{
 }
 .tabs-default.tab-scroll-content.tabbable{
     >ul{
-        >li{}
+        >li{
+            >a{
+                
+            }
+        }
         >li.active{
             >a{
                 color: #fff;
@@ -1406,9 +1410,16 @@ ul.navi-list[data-level="1"] li:hover{
             }
         }
     }
+    >.nav-tabs{
+        border-bottom: 1px solid #186bcc;
+    }
     >.tab-content{
         .container-fluid{
             padding: 5px 0px;
         }
     }
+}
+
+.list-table-event-schedule{
+    height: 600px !important;
 }
