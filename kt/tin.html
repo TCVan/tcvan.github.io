@@ -118,6 +118,12 @@ script: |
                 name = "Kiểm tra lần 8 - Bảo mật thông tin"
                 badge = "Tháng 04"
                 link = "xxxxxx"
+              %}              
+              {% include item_kt.html  
+                style = "white" 
+                name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra giữa kỳ." 
+                ans = "files/12/on tap GK2.pdf"
+                ansName = "Đề cương trắc nghiệm"
               %}
               {% include item_kt.html  
                 style = "white" 
@@ -209,8 +215,13 @@ script: |
                 badge = "Tháng 04"
                 link = "DXyc3CXGnUGdd0vUJ4tdGek1XC3to9JMhpfKl3AEZphUMTgyRksyQjBUSDk5MlJWUUpYMTNWOTJDTi4u"
               %}
-            </ul>
-            {% include item_kt.html  
+              {% include item_kt.html  
+                style = "white" 
+                name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra giữa kỳ." 
+                ans = "files/11/on tap GK2.pdf"
+                ansName = "Đề cương trắc nghiệm"
+              %}
+              {% include item_kt.html  
                 style = "white" 
                 name = "Đề cương chi tiết ôn tập chuẩn bị kiểm tra cuối kỳ." 
                 ans = "files/11/de cuong CKII.pdf"
@@ -218,6 +229,7 @@ script: |
                 score = "files/11/on tap CKII.pdf"
                 scoreName = "Đề cương lý thuyết"
               %}
+            </ul>
           </div>
         </div>        
       </div> <!-- End CCard -->
