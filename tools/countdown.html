@@ -516,8 +516,16 @@
   <script>
     $(document).ready(function () {
       //Callback works only with direction = "down"
-      //$('.flipTimer').flipTimer({ direction: 'up' });
-      $('.flipTimer').flipTimer({ direction: 'down', date: '2021/08/05 20:18:00', callback: function () { alert('times up!'); } });
+      if (confirm('Bạn có muốn hiển thị đồng hồ đếm ngược hay không?')) {        
+        var today = new Date();
+        var date = today.getFullYear() + '/' + (today.getMonth() + 1) + '/' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date + ' ' + time;
+        var time = prompt("Hãy nhập thời điểm sẽ kết thúc ở dạng yyyy/mm/dd hh:mm:ss", dateTime);
+        $('.flipTimer').flipTimer({ direction: 'down', date: time, callback: function () { alert('Hết giờ!'); } });
+      } else {
+        $('.flipTimer').flipTimer({ direction: 'up' });
+      }
     });
   </script>
 </head>
